@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Web To Excel</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">X</div>
+            <h1>WEB TO EXCEL</h1>
+        </header>
+        <p class="sub">Turn tables from any web page into an Excel file in a few seconds.</p>
+
+        <div class="card">
+            <h2>1. Add your web data</h2>
+            <textarea id="src" placeholder="Copy a table on any web page and paste it here (Ctrl/Cmd+V), or paste the page's HTML source, CSV or tab-separated text."></textarea>
+            <div class="row">
+                <button id="go">Extract tables</button>
+                <label class="btn ghost">Open .html / .csv file<input id="file" type="file" accept=".html,.htm,.csv,.txt,.tsv" hidden></label>
+                <button class="ghost" id="clear">Clear</button>
+            </div>
+            <div class="msg hint" id="msg">Tip: select a table on a web page, copy it, and paste it above — formatting is read automatically.</div>
+        </div>
+
+        <div class="card">
+            <h2>2. Preview &amp; download</h2>
+            <div id="out">
+                <div class="empty">No tables yet.</div>
+            </div>
+            <div class="row">
+                <button id="dlx" disabled>Download Excel (.xlsx)</button>
+                <button class="ghost" id="dlc" disabled>Download CSV (first selected)</button>
+                <span class="hint" id="dmsg"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
